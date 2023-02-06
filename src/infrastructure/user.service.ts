@@ -17,7 +17,7 @@ export async function getPage(pageInfo?: Pick<Page<UserModel>, 'page' | 'pageSiz
   return new Page(page, pageSize, totalPages, rows);
 }
 
-export function findByPk(userId: UserModel['id']): Promise<UserModel | null> {
+export function findByPk(userId: UserModel['userId']): Promise<UserModel | null> {
   return UserModel.findByPk(userId);
 }
 
