@@ -1,7 +1,7 @@
 import { Page } from '../../domain/page';
 import { User } from '../../domain/user';
-import { AddFriendParams } from '../../infrastructure/user.utils';
-import * as userService from '../../infrastructure/user.service';
+import { AddFriendParams } from '../../infrastructure/user/user.utils';
+import * as userService from '../../infrastructure/user/user.service';
 
 interface Input<T> {
   input: T;

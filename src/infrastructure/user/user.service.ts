@@ -1,7 +1,7 @@
-import UserModel from '../data/models/user.model';
-import UserFriend from '../data/models/userFriend.model';
-import { Page } from '../domain/page';
-import { User } from '../domain/user';
+import UserModel from '../../data/models/user.model';
+import UserFriend from '../../data/models/userFriend.model';
+import { Page } from '../../domain/page';
+import { User } from '../../domain/user';
 import { AddFriendParams, DEFAULT_PAGE_SIZE } from './user.utils';
 
 export async function getPage(pageInfo?: Pick<Page<UserModel>, 'page' | 'pageSize'>): Promise<Page<UserModel>> {

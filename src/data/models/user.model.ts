@@ -60,7 +60,7 @@ export default class User extends Model {
 }
 
 function isValidGender(value: string) {
-  const isUserGender = Object.values(UserGender).some(v => v === value);
+  const isUserGender = Object.values(UserGender).some(gender => gender === value);
   if (!isUserGender) {
     throw new Error(`${value} is not a UserGender`);
   }
