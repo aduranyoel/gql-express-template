@@ -43,7 +43,7 @@ export default class User extends Model {
   @Column
   lastname: string;
 
-  @Is('gender', isValidGender)
+  @Is({ args: /[MF]/, msg: 'The value is not a valid gender, did you meant M or F?' })
   @AllowNull(false)
   @Column({
     type: DataType.CHAR,
@@ -57,11 +57,4 @@ export default class User extends Model {
   @BelongsToMany(() => User, () => UserFriend, 'userId', 'friendId')
   friends: User[];
 
-}
-
-function isValidGender(value: string) {
-  const isUserGender = Object.values(UserGender).some(gender => gender === value);
-  if (!isUserGender) {
-    throw new Error(`${value} is not a UserGender`);
-  }
 }
